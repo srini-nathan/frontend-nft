@@ -1,5 +1,5 @@
-import { FormikProps } from 'formik';
-import Form from 'react-bootstrap/Form';
+import { FormikProps } from "formik";
+import Form from "react-bootstrap/Form";
 
 export const InputWithValidation = ({
   label,
@@ -7,7 +7,13 @@ export const InputWithValidation = ({
   id,
   type,
   placeholder,
-}:{label:string, formik:FormikProps<any>, id:string, type:string, placeholder:string}) => {
+}: {
+  label: string;
+  formik: FormikProps<any>;
+  id: string;
+  type: string;
+  placeholder: string;
+}) => {
   return (
     <Form.Group>
       <Form.Label htmlFor={id}>{label}</Form.Label>
@@ -17,13 +23,13 @@ export const InputWithValidation = ({
         placeholder={placeholder}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        value={formik.values[id]}
-        isInvalid={formik.touched[id] && !!formik.errors[id] }
-        isValid = {formik.touched[id] && !formik.errors[id]}
+        value={formik.values[id] ?? ""}
+        isInvalid={formik.touched[id] && !!formik.errors[id]}
+        isValid={formik.touched[id] && !formik.errors[id]}
       />
       <Form.Control.Feedback type="invalid">
         {formik.errors[id]}
       </Form.Control.Feedback>
     </Form.Group>
   );
-}
+};

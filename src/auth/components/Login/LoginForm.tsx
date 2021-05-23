@@ -18,10 +18,10 @@ export const LoginForm: FC<LoginFormProps> = ({
       >
         <Card>
           <Card.Body>
-            <Card.Title as="h3">Sign up</Card.Title>
+            <Card.Title as="h3">Login</Card.Title>
             <InputWithValidation
               label="Email"
-              id="firstName"
+              id="email"
               type="email"
               placeholder="Enter email address"
               formik={formik}

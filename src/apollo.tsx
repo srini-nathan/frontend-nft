@@ -7,17 +7,18 @@ import {
   import { setContext } from '@apollo/client/link/context';
   
   // token constance
-  const  TOKEN  =  'TOKEN' ;
+  const  TOKEN  =  'Authorization' ;
   const DARK_MODE = 'DARK_MODE';
   
   // Create a reactive variable named isLoggedInVar
   // The initial value is true if the token stored in localStorage exists, and false if it does not exist.
   export const isLoggedInVar = makeVar(Boolean(localStorage.getItem(TOKEN)));
   
+  
   // If the user successfully logs in, a token is returned.
   // Store the token in localStorage and set isLoggedInvar to true in the reactive variable
   export const logUserIn = (token: string) => {
-    localStorage.setItem(TOKEN, token);
+    localStorage.setItem(TOKEN, `Bearer ${token}`);
     isLoggedInVar(true);
   };
   

@@ -55,7 +55,7 @@ export const SignUpForm: FC<SignupFormProps> = ({
         </Card>
         <Card className="mt-2 text-center">
           <Card.Body>
-            Already have an account? <Link to={"#"}>Login</Link>
+            Already have an account? <Link to={"/login"}>Login</Link>
           </Card.Body>
         </Card>
       </Col>
