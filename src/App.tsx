@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ApolloProvider, useReactiveVar } from "@apollo/client";
 
-function App() {
+import { client, darkModeVar, isLoggedInVar } from "./apollo";
+import { AppRoute } from "./AppRoute";
+
+
+
+const App = () => {
+
+  // isLoggedInVar is declared using makeVar in the apollo.tsx file, but
+// If you want to use this in all react components, you can set hook like this
+// Now you can use isLoggedInVar(true) anywhere in the sub-component in this format
+const isLoggedIn = useReactiveVar(isLoggedInVar);
+const darkMode = useReactiveVar(darkModeVar);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApolloProvider client={client}>
+      <AppRoute />
+    </ApolloProvider>
   );
-}
+};
 
 export default App;
