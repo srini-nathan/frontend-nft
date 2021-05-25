@@ -5,7 +5,7 @@ const StyledTitle = styled.h1`
   font-family: "sf-pro-display";
   font-weight: 400;
   font-size: 1.5rem;
-  margin-top: 30px;
+  margin-top: 60px;
   > strong {
     font-weight: 700;
     color: var(--secondary-text-500);

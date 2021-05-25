@@ -26,7 +26,6 @@ import {
   // Remove the token stored in localStorage and set isLoggedInvar to false in the reactive variable
   export const logUserOut = () => {
     localStorage.removeItem(TOKEN);
-    window.location.reload();
   };
   
   // reactive variable for the state of darkMode
