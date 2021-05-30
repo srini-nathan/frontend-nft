@@ -3,12 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Modal from 'react-modal'
+
+const rootElement = document.getElementById("root");
+
+Modal.setAppElement(rootElement as HTMLElement);
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
+  rootElement
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -62,7 +62,7 @@ import {
         // The client sends it as headers{token:"some token"}
         // In the backend, headers{tokkkkken: "some token"} is received and used.
         // To prevent such a case, the key value must be well specified.
-        token: localStorage.getItem(TOKEN),
+        Authorization: localStorage.getItem(TOKEN),
       },
     };
   });

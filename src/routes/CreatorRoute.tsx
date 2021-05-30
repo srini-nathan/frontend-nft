@@ -33,7 +33,7 @@ const CreatorRoute: React.FC<IProps> = ({
     <Route
       {...rest}
       render={(props) =>
-        !isAuthorizedCreator ? (
+        isAuthorizedCreator ? (
           <>
             <Header user={data?.me!} />
             <Component {...props} />

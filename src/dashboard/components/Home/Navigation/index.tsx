@@ -57,7 +57,7 @@ export const Navigation = ({user}:{user:string}) => {
                 Courses
               </Nav.Link>
             </Nav>
-            {!isLoggedIn ? (
+            {isLoggedIn ? (
               <>
                 <Navbar.Text>
                   Signed in as: <span className="text-white">{user}</span>
